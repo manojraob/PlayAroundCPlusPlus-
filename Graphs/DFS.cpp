@@ -12,17 +12,17 @@ class Graph
 {
     public:
     
-    Graph(int n);
+           Graph(int n);
     
-    void addEdge(int v, int w);
+           void addEdge(int v, int w);
     
-    void dfs(int source);
+           void dfs(int source);
     
     private:
     
-    int noOfVertices;
+            int noOfVertices;
     
-    vector<vector<int>> adjList;
+            vector<vector<int>> adjList;
 };
 
 Graph::Graph(int n)
