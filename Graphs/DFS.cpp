@@ -43,25 +43,19 @@ void Graph::dfs(int s)
     
     cout <<" DFS of the given graph :" << endl;
     stack.push_back(s);
+    visited[s] = true;
     while(!stack.empty())
     {
         int top = stack.back();
-        if(!visited[top])
+        stack.pop_back();
+        cout << top << "\t";
+        for(auto& adjEl : adjList[top])
         {
-           visited[top] = true;
-           stack.pop_back();
-           cout << top << "\t";
-           for(auto& adjEl : adjList[top])
-           {
-              if(!visited[adjEl])
-              {
+            if(!visited[adjEl])
+            {
                 stack.push_back(adjEl);
-              }
-           }
-        }
-        else
-        {
-            stack.pop_back();
+                visited[adjEl] = true;
+            }
         }
     }
 }
