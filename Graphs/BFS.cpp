@@ -98,3 +98,13 @@ int main()
  
     return 0;
 }
+
+/*
+
+-----------------
+ OUTPUT
+-----------------
+Following is Breadth First Traversal (starting from vertex 0) 
+0 1 2 4 3 
+
+ */
