@@ -1,6 +1,8 @@
+/*
 -------------------------------------------------------------
-/* Graph construction using Adjacency list and BFS */
+Graph construction using Adjacency list and BFS 
 -------------------------------------------------------------
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -62,32 +64,37 @@ void Graph::BFS(int s)
         // vertex s.
         // If an adjacent has not been visited,
         // then mark it visited and enqueue it
-        for (int adjacent : adj.at(s)) {
-            if (!visited.at(adjacent)) {
+        for (int adjacent : adj.at(s)) 
+        {
+            if (!visited.at(adjacent)) 
+            {
                 visited.at(adjacent) = true;
                 queue.push_back(adjacent);
             }
- }
+        }
     }
 }
  
 // Driver code
 int main()
 {
-    // Create a graph given in the above diagram
-    Graph g(4);
+     // Create a graph given in the above diagram
+    Graph g(5);
     g.addEdge(0, 1);
     g.addEdge(0, 2);
+    g.addEdge(1, 0);
     g.addEdge(1, 2);
     g.addEdge(2, 0);
-    g.addEdge(2, 3);
-    g.addEdge(3, 3);
+    g.addEdge(2, 1);
+    g.addEdge(2, 4);
+    g.addEdge(3, 1);
+    g.addEdge(3, 4);
+    g.addEdge(4, 2);
+    g.addEdge(4, 3);
  
     cout << "Following is Breadth First Traversal "
-         << "(starting from vertex 2) \n";
-    g.BFS(2);
+         << "(starting from vertex 0) \n";
+    g.BFS(0);
  
     return 0;
-}
-   
 }
